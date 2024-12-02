@@ -1,3 +1,6 @@
+import { PRODUCT_LISTING_BFF_ENDPOINT } from "../../constants/index.js";
+import { getPlaceholderDataFor } from "../../scripts/utils.js";
+
 const loadRemoteModule = async (elem, config) => {
   try {
     // Initialize the remote module
@@ -13,7 +16,7 @@ const loadRemoteModule = async (elem, config) => {
 
 export default async function decorate(block) {
   const config = {
-    producListingBffEndpoint: 'https://products-bff.onrender.com/get-products',
+    producListingBffEndpoint: getPlaceholderDataFor(PRODUCT_LISTING_BFF_ENDPOINT),
   }
   const appHolder = document.createElement('div');
   appHolder.id = 'product-listing-app';
